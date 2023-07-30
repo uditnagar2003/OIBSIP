@@ -222,6 +222,9 @@ public class user_registration extends javax.swing.JFrame {
        if(i==1)
        {
            JOptionPane.showMessageDialog(this, "Registration Succesfull");
+           
+    // this.setVisible(false);
+     //new login().setVisible(true);
               
        }
        else
@@ -237,6 +240,7 @@ public class user_registration extends javax.swing.JFrame {
             { 
             System.out.println(e);
             }  
+     this.setVisible(false);
      new login().setVisible(true);     // TODO add your handling code here:
     }//GEN-LAST:event_regMouseClicked
      

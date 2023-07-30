@@ -282,19 +282,20 @@ public class login extends javax.swing.JFrame {
 {
         con = (Connection) connection.connect();
        
-             stm = con.prepareStatement("select * from user", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-       
+             stm = con.prepareStatement("select * from user where username=?;", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             stm.setString(1, uid);
+             
        rst=stm.executeQuery();
-       /*if(!rst.next())
+       if(!rst.next())
        {
            
                      JOptionPane.showMessageDialog(this, "Enter correct username", uid, JOptionPane.WARNING_MESSAGE);
                              
        }
        else
-       {*/
-        while(rst.next())    
-                  if(uid.equals(rst.getString(3 ))&&pas.equals(rst.getString(4)))
+       {
+        /*while(rst.next())    
+          */        if(uid.equals(rst.getString(3 ))&&pas.equals(rst.getString(4)))
                   { 
                       new services().setVisible(true);
                       idu=rst.getInt(1);
@@ -305,7 +306,7 @@ public class login extends javax.swing.JFrame {
                      JOptionPane.showMessageDialog(this, "Enter correct password", uid, JOptionPane.WARNING_MESSAGE);
                   }
       //  con.close();
-       
+       }
     }//GEN-LAST:event_loginMouseClicked
  catch(Exception e)
             { 

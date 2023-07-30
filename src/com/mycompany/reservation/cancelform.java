@@ -171,7 +171,7 @@ public class cancelform extends javax.swing.JFrame {
         ResultSet rst;
         try
         {
-            Connection con = login.con;
+            Connection con = new connection().connect();
             PreparedStatement stm=con.prepareStatement("select * from reserv where pnr=?;", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stm.setString(1, pnr);
              rst = stm.executeQuery();

@@ -47,7 +47,8 @@ public class confirmation extends javax.swing.JFrame {
             t8.setText(rst.getString(9));
             t9.setText(rst.getString(10));
             t10.setText(rst.getString(11));
-            
+           
+       
                     
         }
         catch(Exception e)
@@ -393,15 +394,16 @@ public class confirmation extends javax.swing.JFrame {
     }//GEN-LAST:event_okActionPerformed
 
     private void okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okMouseClicked
-        try {
+       
            
+        try {
             rst1.deleteRow();
             JOptionPane.showMessageDialog(this, "Ticket Cancelled Successfully");
-                // TODO add your handling code here:
+            //TODO add your handling code here:
+             this.setVisible(false);
         } catch (SQLException ex) {
             Logger.getLogger(confirmation.class.getName()).log(Level.SEVERE, null, ex);
         }
-         this.setVisible(false);
            
     }//GEN-LAST:event_okMouseClicked
 
